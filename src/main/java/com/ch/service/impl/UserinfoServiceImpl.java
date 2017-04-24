@@ -5,46 +5,41 @@ import com.ch.model.Userinfo;
 import com.ch.service.UserinfoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import sun.jvm.hotspot.debugger.Page;
 
-import javax.annotation.Resource;
-import java.io.Serializable;
-import java.util.List;
-import java.util.Map;
 
 /**
  * Created by apple on 2017/4/24.
  */
 @Service
 public class UserinfoServiceImpl implements UserinfoService {
-    @Resource
+    @Autowired
     UserinfoDao userinfoDao;
 
-//    public List<Userinfo> findPage(Page page) {
-//        return userinfoDao.findPage(page);
-//    }
-
-    public List<Userinfo> find(Map paraMap) {
-        return userinfoDao.find(paraMap);
+    public UserinfoServiceImpl() {
+        super();
     }
 
-    public Userinfo get(Serializable id) {
-        return userinfoDao.get(id);
+    public int deleteByPrimaryKey(String username) {
+        return 0;
     }
 
-    public void insert(Userinfo userinfo) {
-
+    public int insert(Userinfo record) {
+        return 0;
     }
 
-    public void update(Userinfo userinfo) {
-
+    public int insertSelective(Userinfo record) {
+        return 0;
     }
 
-    public void deleteById(Serializable id) {
-
+    public Userinfo selectByPrimaryKey(String username) {
+        return userinfoDao.selectByPrimaryKey(username);
     }
 
-    public void delete(Serializable[] ids) {
+    public int updateByPrimaryKeySelective(Userinfo record) {
+        return 0;
+    }
 
+    public int updateByPrimaryKey(Userinfo record) {
+        return 0;
     }
 }

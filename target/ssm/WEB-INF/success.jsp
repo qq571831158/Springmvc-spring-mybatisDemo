@@ -14,8 +14,6 @@
 </head>
 <body>
 <h1>success</h1>
-<c:out value="cc"></c:out>
 <c:out value="${userinfo.nickname}"></c:out>
-${userinfo.nickname}
 </body>
 </html>

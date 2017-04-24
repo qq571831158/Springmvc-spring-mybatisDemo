@@ -23,9 +23,9 @@ public class UserinfoController {
 
     @RequestMapping(value = "/login",method = RequestMethod.POST)
     public String doLogin(@RequestParam("username") String username,@RequestParam("password") String password ,Model model){
-        Userinfo userinfo = userinfoService.get(username);
+        Userinfo userinfo = userinfoService.selectByPrimaryKey(username);
         System.out.println(userinfo.getNickname());
-        if (userinfo!=null){
+        if (!userinfo.getUsername().equals(username)) {
             if (userinfo.getPassword().equals(password)){
                 model.addAttribute("userinfo",userinfo);
                 return "success";

@@ -9,7 +9,7 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public class UserinfoDaoImpl extends BaseDaoImpl<Userinfo> implements UserinfoDao {
-    public  UserinfoDaoImpl(){
-        super.setNs("com.ch.mapping.UserinfoMapper");
+    public UserinfoDaoImpl() {
+        super.setNameSpace("com.ch.mapping.UserinfoMapper");
     }
 }

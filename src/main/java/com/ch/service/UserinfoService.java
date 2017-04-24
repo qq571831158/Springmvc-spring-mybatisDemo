@@ -11,17 +11,16 @@ import java.util.Map;
  * Created by apple on 2017/4/24.
  */
 public interface UserinfoService {
-//    public List<Userinfo> findPage(Page page);          //分页查询
 
-    public List<Userinfo> find(Map paraMap);            //待条件查询,条件可以为null,没有条件,返回list对象
+    int deleteByPrimaryKey(String username);
 
-    public Userinfo get(Serializable id);               //只查询一个,常用于修改
+    int insert(Userinfo record);
 
-    public void insert(Userinfo userinfo);              //插入
+    int insertSelective(Userinfo record);
 
-    public void update(Userinfo userinfo);              //修改
+    Userinfo selectByPrimaryKey(String username);
 
-    public void deleteById(Serializable id);            //按id删除一条
+    int updateByPrimaryKeySelective(Userinfo record);
 
-    public void delete(Serializable[] ids);             //批量删除
+    int updateByPrimaryKey(Userinfo record);
 }

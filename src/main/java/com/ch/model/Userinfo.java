@@ -2,27 +2,42 @@ package com.ch.model;
 
 import java.util.Date;
 
-/**
- * Created by apple on 2017/4/23.
- */
 public class Userinfo {
-    private long id;
     private String username;
-    private String password;
-    private String nickname;
-    private String userPicture;
-    private int islogin;
-    private int isactive;
-    private Date lastModeify;
-    private Date createDate;
-    private String createIP;
 
-    public long getId() {
-        return id;
+    private Integer id;
+
+    private String password;
+
+    private String nickname;
+
+    private String userPicture;
+
+    private Integer islogin;
+
+    private Integer isactive;
+
+    private Date lastModeify;
+
+    private Date createDate;
+
+    private String createIp;
+
+    public Userinfo(String username, Integer id, String password, String nickname, String userPicture, Integer islogin, Integer isactive, Date lastModeify, Date createDate, String createIp) {
+        this.username = username;
+        this.id = id;
+        this.password = password;
+        this.nickname = nickname;
+        this.userPicture = userPicture;
+        this.islogin = islogin;
+        this.isactive = isactive;
+        this.lastModeify = lastModeify;
+        this.createDate = createDate;
+        this.createIp = createIp;
     }
 
-    public void setId(long id) {
-        this.id = id;
+    public Userinfo() {
+        super();
     }
 
     public String getUsername() {
@@ -30,7 +45,15 @@ public class Userinfo {
     }
 
     public void setUsername(String username) {
-        this.username = username;
+        this.username = username == null ? null : username.trim();
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getPassword() {
@@ -38,7 +61,7 @@ public class Userinfo {
     }
 
     public void setPassword(String password) {
-        this.password = password;
+        this.password = password == null ? null : password.trim();
     }
 
     public String getNickname() {
@@ -46,7 +69,7 @@ public class Userinfo {
     }
 
     public void setNickname(String nickname) {
-        this.nickname = nickname;
+        this.nickname = nickname == null ? null : nickname.trim();
     }
 
     public String getUserPicture() {
@@ -54,22 +77,22 @@ public class Userinfo {
     }
 
     public void setUserPicture(String userPicture) {
-        this.userPicture = userPicture;
+        this.userPicture = userPicture == null ? null : userPicture.trim();
     }
 
-    public int getIslogin() {
+    public Integer getIslogin() {
         return islogin;
     }
 
-    public void setIslogin(int islogin) {
+    public void setIslogin(Integer islogin) {
         this.islogin = islogin;
     }
 
-    public int getIsactive() {
+    public Integer getIsactive() {
         return isactive;
     }
 
-    public void setIsactive(int isactive) {
+    public void setIsactive(Integer isactive) {
         this.isactive = isactive;
     }
 
@@ -89,26 +112,11 @@ public class Userinfo {
         this.createDate = createDate;
     }
 
-    public String getCreateIP() {
-        return createIP;
+    public String getCreateIp() {
+        return createIp;
     }
 
-    public void setCreateIP(String createIP) {
-        this.createIP = createIP;
+    public void setCreateIp(String createIp) {
+        this.createIp = createIp == null ? null : createIp.trim();
     }
-    public Userinfo(){}
-
-    public Userinfo(long id, String username, String password, String nickname, String userPicture, int islogin, int isactive, Date lastModeify, Date createDate, String createIP) {
-        this.id = id;
-        this.username = username;
-        this.password = password;
-        this.nickname = nickname;
-        this.userPicture = userPicture;
-        this.islogin = islogin;
-        this.isactive = isactive;
-        this.lastModeify = lastModeify;
-        this.createDate = createDate;
-        this.createIP = createIP;
-    }
-
 }
