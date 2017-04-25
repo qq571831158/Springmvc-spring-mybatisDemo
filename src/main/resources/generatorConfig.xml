@@ -61,6 +61,5 @@
                enableCountByExample="false" enableUpdateByExample="false"
                enableDeleteByExample="false" enableSelectByExample="false"
                selectByExampleQueryId="false"/>
-
     </context>
 </generatorConfiguration>

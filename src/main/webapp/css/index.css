@@ -1,0 +1,217 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+}
+
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+.w {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+#bg {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 1600px;
+    background: #000000;
+    opacity: 0.5;
+    z-index: 2;
+}
+
+#login {
+    z-index: 3;
+    border-radius: 10px;
+    background: white;
+    position: absolute;
+    top: -420px;
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+    height: 410px;
+    border: solid 1px #D9D9D9;
+}
+
+#login span {
+    margin-top: 20px;
+    display: inline-block;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+}
+
+#login #username, #password {
+    width: 300px;
+    height: 35px;
+    float: left;
+    margin-top: 25px;
+    margin-left: 50px;
+    border-radius: 5px;
+}
+
+#login #codein {
+    width: 150px;
+    height: 35px;
+    float: left;
+    margin-top: 25px;
+    margin-left: 50px;
+    border-radius: 5px;
+}
+
+#login button {
+    margin-top: 30px;
+    width: 300px;
+    height: 35px;
+    margin-left: 50px;
+    background: #B1B1B1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+#toRegist {
+    z-index: 3;
+    border-radius: 10px;
+    background: white;
+    position: absolute;
+    top: -420px;
+    left: 50%;
+    width: 400px;
+    margin-left: -200px;
+    height: 410px;
+    border: solid 1px #D9D9D9;
+}
+
+#toRegist span {
+    margin-top: 20px;
+    display: inline-block;
+    width: 100%;
+    font-size: 25px;
+    text-align: center;
+}
+
+#toRegist input {
+    width: 300px;
+    height: 35px;
+    float: left;
+    margin-top: 25px;
+    margin-left: 50px;
+    border-radius: 5px;
+}
+
+#toRegist #codein {
+    width: 150px;
+    height: 35px;
+    float: left;
+    margin-top: 25px;
+    margin-left: 50px;
+    border-radius: 5px;
+}
+
+#toRegist button {
+    margin-top: 30px;
+    width: 300px;
+    height: 35px;
+    margin-left: 50px;
+    background: #B1B1B1;
+    color: white;
+    border: none;
+    border-radius: 10px;
+}
+
+#toRegist #img2 {
+    display: none;
+    position: absolute;
+    top: 86px;
+    right: 60px;
+}
+
+#toRegist #img3 {
+    display: none;
+    position: absolute;
+    top: 86px;
+    right: 60px;
+}
+
+#top {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 30px;
+    background: #f1f1f1;
+}
+
+#top #out {
+    display: none;
+}
+
+#top a {
+    color: #b1b1b1;
+}
+
+#top .top-left {
+    float: left;
+}
+
+#top .top-right {
+    float: right;
+}
+
+#top li {
+    float: left;
+    font-size: 10px;
+    margin-right: 20px;
+    line-height: 30px;
+    color: #999999;
+}
+
+header {
+    height: 130px;
+    margin-top: 30px;
+}
+
+.header-in {
+    position: relative;
+}
+
+.header-in .logo {
+    width: 200px;
+    position: absolute;
+    top: 35px;
+
+}
+
+.header-in .sarch {
+    position: absolute;
+    left: 400px;
+    top: 45px;
+    height: 36px;
+}
+
+.header-in .sarch #search-text {
+    width: 410px;
+    height: 30px;
+    border: 3px solid #77af26;
+}
+
+.header-in .sarch #search-button {
+    margin-left: -10px;
+    width: 90px;
+    height: 36px;
+    background: #77af26;
+    border: none;
+    color: white;
+}
