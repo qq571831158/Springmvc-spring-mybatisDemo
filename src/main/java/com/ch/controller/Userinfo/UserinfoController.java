@@ -5,6 +5,11 @@ import com.ch.bean.userinfo.UserLoginIBean;
 import com.ch.model.Userinfo;
 import com.ch.service.UserinfoService;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.core.RedisCallback;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -19,7 +24,6 @@ import javax.annotation.Resource;
 public class UserinfoController {
     @Resource
     UserinfoService userinfoService;
-
     @ResponseBody
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public OBeanBase doLogin(@RequestBody UserLoginIBean userLoginIBean) {

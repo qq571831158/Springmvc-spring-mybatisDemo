@@ -9,7 +9,7 @@
        http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
     <!--可扫描注解的包-->
     <mvc:annotation-driven />
-    <context:component-scan base-package="com.ch.controller.Userinfo;"/>
+    <context:component-scan base-package="com.ch.controller"/>
     <!--视图解析器-->
     <bean id="jspViewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!--<property name="viewClass" value="org.springframework.web.servlet.view.JstlView"/>-->
@@ -18,8 +18,7 @@
     </bean>
 
 
-    <!--<bean class="org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter"/>-->
-    <!--消息转换,接受到的-->
+    <!--消息转换器-->
     <bean id="mappingJacksonHttpMessageConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
         <property name="supportedMediaTypes">
             <list>

@@ -1,8 +1,9 @@
 package com.ch.model;
 
+import java.io.Serializable;
 import java.util.Date;
 
-public class Userinfo {
+public class Userinfo implements Serializable {
     private String username;
 
     private Integer id;

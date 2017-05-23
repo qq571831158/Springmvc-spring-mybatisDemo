@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ch.mapping.UserinfoMapper">
+    <resultMap id="BaseResultMap" type="com.ch.model.Userinfo">
+        <constructor>
+            <idArg column="username" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="id" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="password" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="nickname" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="user_picture" jdbcType="VARCHAR" javaType="java.lang.String"/>
+            <arg column="islogin" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="isactive" jdbcType="INTEGER" javaType="java.lang.Integer"/>
+            <arg column="last_modeify" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="create_date" jdbcType="TIMESTAMP" javaType="java.util.Date"/>
+            <arg column="create_ip" jdbcType="VARCHAR" javaType="java.lang.String"/>
+        </constructor>
+    </resultMap>
+    <sql id="Base_Column_List">
+    username, id, password, nickname, user_picture, islogin, isactive, last_modeify, 
+    create_date, create_ip
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from USERINFO
+        where username = #{username,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    delete from USERINFO
+    where username = #{username,jdbcType=VARCHAR}
+  </delete>
+    <insert id="insert" parameterType="com.ch.model.Userinfo">
+    insert into USERINFO (username, id, password, 
+      nickname, user_picture, islogin, 
+      isactive, last_modeify, create_date, 
+      create_ip)
+    values (#{username,jdbcType=VARCHAR}, #{id,jdbcType=INTEGER}, #{password,jdbcType=VARCHAR}, 
+      #{nickname,jdbcType=VARCHAR}, #{userPicture,jdbcType=VARCHAR}, #{islogin,jdbcType=INTEGER}, 
+      #{isactive,jdbcType=INTEGER}, #{lastModeify,jdbcType=TIMESTAMP}, #{createDate,jdbcType=TIMESTAMP}, 
+      #{createIp,jdbcType=VARCHAR})
+  </insert>
+    <insert id="insertSelective" parameterType="com.ch.model.Userinfo">
+        insert into USERINFO
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                username,
+            </if>
+            <if test="id != null">
+                id,
+            </if>
+            <if test="password != null">
+                password,
+            </if>
+            <if test="nickname != null">
+                nickname,
+            </if>
+            <if test="userPicture != null">
+                user_picture,
+            </if>
+            <if test="islogin != null">
+                islogin,
+            </if>
+            <if test="isactive != null">
+                isactive,
+            </if>
+            <if test="lastModeify != null">
+                last_modeify,
+            </if>
+            <if test="createDate != null">
+                create_date,
+            </if>
+            <if test="createIp != null">
+                create_ip,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="username != null">
+                #{username,jdbcType=VARCHAR},
+            </if>
+            <if test="id != null">
+                #{id,jdbcType=INTEGER},
+            </if>
+            <if test="password != null">
+                #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null">
+                #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="userPicture != null">
+                #{userPicture,jdbcType=VARCHAR},
+            </if>
+            <if test="islogin != null">
+                #{islogin,jdbcType=INTEGER},
+            </if>
+            <if test="isactive != null">
+                #{isactive,jdbcType=INTEGER},
+            </if>
+            <if test="lastModeify != null">
+                #{lastModeify,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createDate != null">
+                #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createIp != null">
+                #{createIp,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.ch.model.Userinfo">
+        update USERINFO
+        <set>
+            <if test="id != null">
+                id = #{id,jdbcType=INTEGER},
+            </if>
+            <if test="password != null">
+                password = #{password,jdbcType=VARCHAR},
+            </if>
+            <if test="nickname != null">
+                nickname = #{nickname,jdbcType=VARCHAR},
+            </if>
+            <if test="userPicture != null">
+                user_picture = #{userPicture,jdbcType=VARCHAR},
+            </if>
+            <if test="islogin != null">
+                islogin = #{islogin,jdbcType=INTEGER},
+            </if>
+            <if test="isactive != null">
+                isactive = #{isactive,jdbcType=INTEGER},
+            </if>
+            <if test="lastModeify != null">
+                last_modeify = #{lastModeify,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createDate != null">
+                create_date = #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="createIp != null">
+                create_ip = #{createIp,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where username = #{username,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.ch.model.Userinfo">
+    update USERINFO
+    set id = #{id,jdbcType=INTEGER},
+      password = #{password,jdbcType=VARCHAR},
+      nickname = #{nickname,jdbcType=VARCHAR},
+      user_picture = #{userPicture,jdbcType=VARCHAR},
+      islogin = #{islogin,jdbcType=INTEGER},
+      isactive = #{isactive,jdbcType=INTEGER},
+      last_modeify = #{lastModeify,jdbcType=TIMESTAMP},
+      create_date = #{createDate,jdbcType=TIMESTAMP},
+      create_ip = #{createIp,jdbcType=VARCHAR}
+    where username = #{username,jdbcType=VARCHAR}
+  </update>
+</mapper>

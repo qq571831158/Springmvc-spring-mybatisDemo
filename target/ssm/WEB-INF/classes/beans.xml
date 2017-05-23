@@ -13,12 +13,13 @@
 			http://www.springframework.org/schema/aop/spring-aop-3.0.xsd 
 			http://www.springframework.org/schema/tx 
 			http://www.springframework.org/schema/tx/spring-tx-3.0.xsd ">
+    <!--载入配置文件-->
     <context:property-placeholder location="classpath:config.properties"/>
 
     <!--自动扫描service-->
     <context:component-scan base-package="com.ch.service,com.ch.dao"/>
 
-    <!--mybatis数据源-->
+    <!--mybatis数据源,这里用的是apache的dbcp-->
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
         <property name="driverClassName" value="${jdbc.driver}"/>
         <property name="url" value="${jdbc.url}"/>
@@ -34,9 +35,12 @@
 
     </bean>
 
+    <!--mybatis 核心类-->
     <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
         <property name="configLocation" value="classpath:spring-mybatis.xml"/>
+        <!--配置mybatis映射文件mapper的位置,如果配置文件在src/main/java目录下,maven默认不会编译,参考我pom.xml的,build,
+             当然也可以放在resources目录下,那样就可以访问到-->
         <property name="mapperLocations" value="classpath*:com/ch/mapping/*.xml"/>
     </bean>
 
